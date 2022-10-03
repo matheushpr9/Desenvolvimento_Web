@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>gráficos pyscript</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-env>
+        
+        - matplotlib
+
+    </py-env>
+</head>
+<body>
+    <strong> Matplotlib Output: </strong>
+    <div id="plot"></div>
+
+    <py-script output="plot">
+
+        import matplotlib.pyplot as plt
+        import numpy as np
+        plt.style.use('_mpl-gallery')
+
+        # make data:
+        np.random.seed(3)
+        x = 0.5 + np.arange(8)
+        y = np.random.uniform(2, 7, len(x))
+
+        # plot
+        fig, ax = plt.subplots()
+
+        ax.bar(x, y, width=1, edgecolor="white", linewidth=0.7)
+
+        ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
+            ylim=(0, 8), yticks=np.arange(1, 8))
+
+
+        fig
+
+
+    </py-script>
+
+</body>
+</html>

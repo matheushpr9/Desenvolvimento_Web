@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>gráficos pyscript</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-env>
+        
+        - matplotlib
+
+    </py-env>
+</head>
+<body>
+    <strong> Matplotlib Output: </strong>
+    <div id="plot"></div>
+
+    <py-script output="plot">
+
+        import matplotlib
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        #dados para a plotagem
+        t = np.arange(0.0, 2.0, 0.01)
+        s = 1 + np.sin(2 * np.pi * t)
+
+        fig, ax = plt.subplots()
+        ax.plot(t, s)
+
+        ax.set(xlabel='tempo (s)', ylabel ='voltagem (mV)',
+                title='Produtividade')
+        
+        ax.grid()
+
+        fig
+
+
+    </py-script>
+
+</body>
+</html>

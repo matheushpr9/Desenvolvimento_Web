@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>gráficos pyscript</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-env>
+        
+        - matplotlib
+
+    </py-env>
+</head>
+<body>
+    <div id="plot"></div>
+
+    <script>
+        var lista = [1,2,3,4,5];
+    </script>
+
+    <py-script output="plot">
+
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        x = ["matheus","Renan","Ari","Nicollas","Riti"]
+        y = [1,2,3,4,5]
+
+
+
+        # plot
+        plt.bar(x, y, color="red")
+
+        plt.xticks(x)
+
+        plt.ylabel('Média (peças/hora)')
+
+        plt.xlabel('Colaboradores')
+
+        plt.title('Colaboradors X peça/hora')
+
+        
+        plt
+
+    </py-script>
+
+</body>
+</html>

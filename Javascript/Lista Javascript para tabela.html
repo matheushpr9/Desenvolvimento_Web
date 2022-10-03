@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Oi</h1>
+        <script>
+            var lista = [[1,2,3],[4,5,6],[7,8,9],[10,11,12]];
+
+            contador = 0;
+
+            tabela = ""
+
+            while(contador < lista.length){
+
+                contador_interno = 1;
+
+                tabela = tabela +"<tr><td>"+lista[contador][0]+"</td>";
+
+                while(contador_interno<lista[contador].length){
+                    tabela = tabela +"<td>"+lista[contador][contador_interno]+"</td>";
+                    contador_interno++;
+                }
+
+                tabela = tabela + "</tr>"
+
+        
+                contador++;
+
+            }
+
+            tabela = "<table>" + tabela + "</table>"
+
+            document.body.innerHTML = document.body.innerHTML + tabela;
+
+        </script>
+        <h1>Oi</h1>
+
+</body>
+</html>

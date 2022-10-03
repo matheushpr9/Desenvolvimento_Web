@@ -1,0 +1,22 @@
+.even_row {
+  background-color: #FF7070;
+  color: #FFFFFF;
+}
+tr:hover {
+  background-color:#FF0000;
+  color: #FFFFFF;
+}
+.selected_row {
+  background-color: #CCCCCC !important;
+  color: #FFFFFF;
+}
+thead tr {
+  color: #FFFFFF;
+  background-color: #CC0000;
+  cursor: pointer;
+  * cursor: hand;
+}
+tr {
+  cursor: pointer;
+  * cursor: hand;
+}

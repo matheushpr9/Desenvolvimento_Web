@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"></script>
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <form method="post">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="31"> NFO + Fornecedor</th>
+            </tr>
+            <tr>
+                <th><strong>Separado ?</strong></th>
+                <th><strong>Material</strong></th>
+                <th><strong>REF</strong></th>
+                <th><strong>Descrição</strong></th>
+                <th><strong>Quantidade <br> para separar</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>Row1, Col1</td>
+                <td>Row1, Col2</td>
+                <td>Row1, Col3</td>
+                <td>Row1, Col3</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>Row2, Col1</td>
+                <td>Row2, Col2</td>
+                <td>Row2, Col3</td>
+                <td>Row2, Col3</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>Row3, Col1</td>
+                <td>Row3, Col2</td>
+                <td>Row3, Col3</td>
+                <td>Row3, Col3</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>Row3, Col1</td>
+                <td>Row3, Col2</td>
+                <td>Row3, Col3</td>
+                <td>Row3, Col3</td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+<script type="text/javascript">//<![CDATA[
+
+
+$(function () {
+    //Add the style: 'even_row' for even rows
+    $('table tbody tr:even').addClass('even_row');
+
+    $("#check_all").change(function () {
+        //First the checkbox statuses will be changed according to
+        //the status of the master checkbox
+        $('input:checkbox').prop('checked', this.checked);
+        //Then rows inside the tbody tag will toggle the selected_row
+        //style according to the value of the master checkbox
+        $('tbody tr').toggleClass("selected_row", this.checked)
+    });
+
+    //This changes the color of a row and the checkbox status
+    //whenever the user clicks on the row or the checkbox.
+    //In order to exclude the header row, it will be applied only to the
+    //tbody selector.
+    $('table tbody :checkbox').change(function (event) {
+        $(this).closest('tr').toggleClass("selected_row", this.checked);
+    });
+    $('table tbody tr').click(function(event) {
+        if (event.target.type !== 'checkbox') {
+			$(':checkbox', this).trigger('click');
+		}
+	});
+});
+
+
+  //]]></script>
+    
+    </body>
+</html>

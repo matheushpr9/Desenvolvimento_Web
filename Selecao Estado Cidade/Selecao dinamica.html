@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estados e Cidades</title>
+  <script language="JavaScript" type="text/javascript" src="cidades-estados.js"></script>
+</head>
+  <body>
+
+    <select id="estado"></select>
+    <select id="cidade"></select>
+    <script language="JavaScript" type="text/javascript" charset="utf-8">
+      new dgCidadesEstados({
+        cidade: document.getElementById('cidade'),
+        estado: document.getElementById('estado')
+      })
+    </script>
+  </body>
+</html>
